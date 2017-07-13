@@ -65,4 +65,13 @@ class BlogPostAdmin  extends AbstractAdmin{
                 ? $object->getTitle()
                 : 'Blog Post';  // shown in the breadcrumb on the create view
     }
+    
+    public function configureDatagridFilters(DatagridMapper $filter) {
+        $filter->add('title')
+                ->add('category', null, array(), 'entity', array(
+                'class'    => 'AppBundle\Entity\Category',
+                'choice_label' => 'name', // In Symfony2: 'property' => 'name'
+            ))
+            ;
+    }
 }
