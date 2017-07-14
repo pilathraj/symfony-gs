@@ -7,14 +7,13 @@
             <file>file:/D:/xampp/htdocs/gs/app/config/routing.yml</file>
             <file>file:/D:/xampp/htdocs/gs/src/AppBundle/Admin/CategoryAdmin.php</file>
             <file>file:/D:/xampp/htdocs/gs/app/config/parameters.yml</file>
+            <file>file:/D:/xampp/htdocs/gs/src/AppBundle/Admin/BlogPostAdmin.php</file>
             <file>file:/D:/xampp/htdocs/gs/app/config/parameters.yml.dist</file>
-            <file>file:/D:/xampp/htdocs/gs/app/config/security.yml</file>
             <file>file:/D:/xampp/htdocs/gs/src/AppBundle/Entity/Category.php</file>
             <file>file:/D:/xampp/htdocs/gs/app/config/services.yml</file>
             <file>file:/D:/xampp/htdocs/gs/src/AppBundle/Controller/LuckyController.php</file>
             <file>file:/D:/xampp/htdocs/gs/app/config/config.yml</file>
             <file>file:/D:/xampp/htdocs/gs/src/AppBundle/Controller/BlogController.php</file>
-            <file>file:/D:/xampp/htdocs/gs/app/config/routing_dev.yml</file>
             <file>file:/D:/xampp/htdocs/gs/app/Resources/views/lucky/number.html.twig</file>
             <file>file:/D:/xampp/htdocs/gs/src/AppBundle/Entity/BlogPost.php</file>
             <file>file:/D:/xampp/htdocs/gs/app/AppKernel.php</file>

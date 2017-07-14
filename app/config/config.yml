@@ -41,7 +41,9 @@ twig:
 # Doctrine Configuration
 doctrine:
     dbal:
-        driver: '%database_driver%'
+        types:
+            json: Sonata\Doctrine\Types\JsonType
+        driver: pdo_sqlsrv
         host: '%database_host%'
         port: '%database_port%'
         dbname: '%database_name%'
@@ -68,6 +70,12 @@ swiftmailer:
     password: '%mailer_password%'
     spool: { type: memory }
 
+# Sonata User
+
+sonata_user:
+    security_acl: true
+    manager_type: orm #can be orm or mongodb
+
 # Sonata Admin
 sonata_block:
     default_contexts: [cms]
@@ -76,3 +84,32 @@ sonata_block:
         sonata.admin.block.admin_list:
             contexts: [admin]
         # ...
+        # Sonata User
+        sonata.user.block.menu:    # used to display the menu in profile pages
+        sonata.user.block.account: # used to display menu option (login option)
+        sonata.block.service.text: # used to if you plan to use Sonata user routes
+        # ...
+fos_user:
+    db_driver:      orm # can be orm or odm
+    firewall_name:  main
+    user_class:     Application\Sonata\UserBundle\Entity\User  
+    
+    from_email:
+        address: pilathraj@gmail.com
+        sender_name: pilathraj
+
+    group:
+        group_class:   Application\Sonata\UserBundle\Entity\Group
+        group_manager: sonata.user.orm.group_manager  # If you're using doctrine orm (use sonata.user.mongodb.group_manager for mongodb)
+
+    service:
+        user_manager: sonata.user.orm.user_manager    # If you're using doctrine orm (use sonata.user.mongodb.user_manager for mongodb)
+        
+doctrine:    
+    orm:
+        entity_managers:
+            default:
+                mappings:
+                    ApplicationSonataUserBundle: ~
+                    SonataUserBundle: ~
+                    FOSUserBundle: ~   # If SonataUserBundle extends it
